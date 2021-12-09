@@ -1,29 +1,30 @@
-module.exports = function (accountService) {
+const GreetingContract = require("../../../../../../contracts/build/contracts/Greeting.json");
+
+module.exports = function () {
   let operations = {
     GET,
   };
 
   async function GET(req, res) {
-    const accountId = req.params.account;
-
     try {
-      const account = await accountService.getAccount(accountId);
+      console.log("Fetched greeting");
 
-      res.send({ account });
+      res.status(200).json(GreetingContract);
     } catch (error) {
       res.status(err.status || 500).send({ error });
     }
   }
 
   GET.apiDoc = {
-    summary: "Get account",
-    operationId: "getAccount",
+    summary: "Get greeting contract",
+    operationId: "getContractGreeting",
     parameters: [],
     responses: {
       200: {
-        description: "Get account balance",
+        description: "Get greeting contract",
         schema: {
-          type: "array",
+          type: "object",
+          additionalProperties: true,
         },
       },
       default: {

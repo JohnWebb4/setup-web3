@@ -2,7 +2,7 @@
 
 Goal: Setup Web 3 to better understand blockchain and how it applies to the stack.
 
-# Setup
+## Setup
 
 Install [Ganache](http://trufflesuite.com/ganache/)
 
@@ -22,7 +22,30 @@ Install [Solidity](https://docs.soliditylang.org/en/v0.8.10/)
 npm i -g solc
 ```
 
-# Contracts
+## Local Development
+
+Start ganache
+
+Start ganache-cli
+
+```sh
+ganache-cli
+```
+
+Start server
+
+```sh
+cd server
+node index.js
+```
+
+Open website
+
+```
+open http://localhost:8080
+```
+
+## Contracts
 
 Create a contract inside contracts
 

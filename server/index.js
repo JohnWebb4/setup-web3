@@ -1,3 +1,4 @@
+const cors = require("cors");
 const express = require("express");
 const { initialize } = require("express-openapi");
 
@@ -8,6 +9,8 @@ const PORT = process.env.PORT || 8080;
 
 const app = express();
 
+app.use(cors());
+
 initialize({
   app,
   apiDoc,
@@ -16,6 +19,8 @@ initialize({
   },
   paths: "./src/api/paths",
 });
+
+app.use(express.static("../website"));
 
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
