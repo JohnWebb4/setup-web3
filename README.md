@@ -10,8 +10,30 @@ Setup a Ganache Etherium blockchain
 
 Install [Ganache-cli](https://www.npmjs.com/package/ganache-cli)
 
-Fork Cloudflare etherium blockchain for local use testing
+Install [Truffle](http://trufflesuite.com/index.html)
 
 ```sh
-ganache-cli -f https://cloudflare-eth.com/  -m "clutch captain shoe salt awake harvest setup primary inmate ugly among become" -i 999 -u 0x9759A6Ac90977b93B58547b4A71c78317f391A28
+npm i -g truffle
+```
+
+Install [Solidity](https://docs.soliditylang.org/en/v0.8.10/)
+
+```
+npm i -g solc
+```
+
+# Contracts
+
+Create a contract inside contracts
+
+```sh
+cd contracts
+truffle create contract $NAME
+```
+
+Update the contract. And add a migration in `migrations/`. When ready to migrate
+
+```sh
+truffle compile
+truffle migrate
 ```
